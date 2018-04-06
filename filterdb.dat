@@ -5,7 +5,7 @@ return global function last true false try catch
 + - * / = ! % & | , . : ? \ < > ( ) [ ] { }
 
 [DATATYPES]
-clip int float string bool val
+clip int float string bool val func
 
 [CLIPPROPERTIES]
 AudioBits(clip)

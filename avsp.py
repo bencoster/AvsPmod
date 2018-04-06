@@ -1433,7 +1433,7 @@ class AvsStyledTextCtrl(stc.StyledTextCtrl):
                     info = u''
                 argInfo.append((item, argtype.lower(), name, boolMulti, boolOptional, info))
             except ValueError:
-                if item.lower() in ('clip', 'int', 'float', 'bool', 'string'):
+                if item.lower() in ('clip', 'int', 'float', 'bool', 'string', 'func'):
                     argInfo.append((item, item.lower(), u'', boolMulti, boolOptional, u''))
                 else:
                     # Assume it's a clip
@@ -6324,7 +6324,7 @@ class MainFrame(wxp.Frame):
             'true', 'false', 'try', 'catch',
         ]
         self.avsdatatypes = [
-            'clip', 'int', 'float', 'string', 'bool', 'var',
+            'clip', 'int', 'float', 'string', 'bool', 'var', 'func'
         ]
         self.avsoperators = [
             '-', '*', ',', '.', '/', ':', '?', '\\', '+', '<', '>', '=',
@@ -6686,6 +6686,7 @@ class MainFrame(wxp.Frame):
             'f': 'float',
             'b': 'bool',
             's': 'string',
+            'n': 'func',
             '.': 'var',
             #~ '*': '[...]',
         }
